@@ -93,12 +93,6 @@ class OrderController extends AbstractController
                 'reference' => $order->getReference()
             ]);
         }
-        return $this->render('order/add.html.twig', [
-            'cart' => $cart->getCartWithData(),
-            'total' => $total,
-            'carrier' =>$carriers,
-            'delivery' => $deliveryContent,
-            'reference' => $order->getReference()
-        ]);
+        return $this->redirectToRoute('app_home');
     }
 }

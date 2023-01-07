@@ -19,7 +19,7 @@
                 <a href="{{ path('app_adress') }}" class="btn btn-secondary border border-dark"> Ajouter une nouvelle adresse </a>
                 {{ form_row(formOrder.addresses) }}
                 {{ form_row(formOrder.carriers) }}
-                <a href="{{ path('order_recap') }}" class="boutonConnexion btn w-100"> Valider votre commande </a>
+                <button type="submit" class="boutonConnexion btn w-100"> Valider votre commande </button>
             {{ form_end(formOrder) }}
         {% endset %}
         {{ formHtml|replace({'[br]' : '<br/>'})|raw }}
