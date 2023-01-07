@@ -85,7 +85,7 @@ class OrderController extends AbstractController
             //   dump();
             //   dd($checkout_session);
 
-            return $this->render('order/add.html.twig', [
+            return $this->renderForm('order/add.html.twig', [
                 'cart' => $cart->getCartWithData(),
                 'total' => $total,
                 'carrier' =>$carriers,
