@@ -17,6 +17,9 @@
             {{ form_start(formOrder, {action : path('order_recap')}) }}
                 {{ form_label(formOrder.addresses, 'Choisissez votre adresse de livraison :') }}
                 <a href="{{ path('app_adress') }}" class="btn btn-secondary border border-dark"> Ajouter une nouvelle adresse </a>
+                {{ form_row(formOrder.addresses) }}
+                {{ form_row(formOrder.carriers) }}
+                <button type="submit" class="btn btn-primary w-100"> Valider votre commande </button>
             {{ form_end(formOrder) }}
         {% endset %}
         {{ formHtml|replace({'[br]' : '<br/>'})|raw }}
