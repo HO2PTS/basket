@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20221220091924 extends AbstractMigration
+final class Version20221121094352 extends AbstractMigration
 {
     public function getDescription(): string
     {
@@ -23,7 +23,6 @@ final class Version20221220091924 extends AbstractMigration
         $this->addSql('CREATE TABLE commande (id INT AUTO_INCREMENT NOT NULL, produit_id INT DEFAULT NULL, membre_id INT DEFAULT NULL, date_commande DATETIME NOT NULL, date_arrive DATETIME NOT NULL, prix_total INT NOT NULL, INDEX IDX_6EEAA67DF347EFB (produit_id), INDEX IDX_6EEAA67D6A99F74A (membre_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('ALTER TABLE commande ADD CONSTRAINT FK_6EEAA67DF347EFB FOREIGN KEY (produit_id) REFERENCES produit (id)');
         $this->addSql('ALTER TABLE commande ADD CONSTRAINT FK_6EEAA67D6A99F74A FOREIGN KEY (membre_id) REFERENCES membre (id)');
-        $this->addSql('ALTER TABLE `order` ADD reference VARCHAR(255) NOT NULL');
     }
 
     public function down(Schema $schema): void
@@ -32,6 +31,5 @@ final class Version20221220091924 extends AbstractMigration
         $this->addSql('ALTER TABLE commande DROP FOREIGN KEY FK_6EEAA67DF347EFB');
         $this->addSql('ALTER TABLE commande DROP FOREIGN KEY FK_6EEAA67D6A99F74A');
         $this->addSql('DROP TABLE commande');
-        $this->addSql('ALTER TABLE `order` DROP reference');
     }
 }
