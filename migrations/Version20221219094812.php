@@ -26,7 +26,6 @@ final class Version20221219094812 extends AbstractMigration
     public function down(Schema $schema): void
     {
         // this down() migration is auto-generated, please modify it to your needs
-        $this->addSql('DROP TABLE commande');
         $this->addSql('ALTER TABLE `order` DROP is_paid');
     }
 }
