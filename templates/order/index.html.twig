@@ -17,9 +17,6 @@
             {{ form_start(formOrder, {action : path('order_recap')}) }}
                 {{ form_label(formOrder.addresses, 'Choisissez votre adresse de livraison :') }}
                 <a href="{{ path('app_adress') }}" class="btn btn-secondary border border-dark"> Ajouter une nouvelle adresse </a>
-                {{ form_row(formOrder.addresses) }}
-                {{ form_row(formOrder.carriers) }}
-                <button type="submit" class="boutonConnexion btn w-100"> Valider votre commande </button>
             {{ form_end(formOrder) }}
         {% endset %}
         {{ formHtml|replace({'[br]' : '<br/>'})|raw }}
@@ -32,7 +29,7 @@
                 {% for item in cart %}
                 <div class="row my-2">
                     <div class="col-2">
-                        <img src="{{ asset('uploads/photo_produit/' ~ item.produit.photo) }}" height="75px" width="100px" alt="{{ item.produit.titre }}">
+                        <img src="{{ item.produit.photo }}" height="75px" alt="{{ item.produit.titre }}">
                     </div>
                     <div class="col-md-8 my-auto">
 

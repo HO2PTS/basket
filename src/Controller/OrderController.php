@@ -39,7 +39,6 @@ class OrderController extends AbstractController
         ]);
 
         $form->handleRequest($request);
-        
         if($form->isSubmitted() && $form->isValid())
         {
             $date = new \DateTime;
@@ -85,7 +84,7 @@ class OrderController extends AbstractController
             //   dump();
             //   dd($checkout_session);
 
-            return $this->renderForm('order/add.html.twig', [
+            return $this->render('order/add.html.twig', [
                 'cart' => $cart->getCartWithData(),
                 'total' => $total,
                 'carrier' =>$carriers,
@@ -93,6 +92,8 @@ class OrderController extends AbstractController
                 'reference' => $order->getReference()
             ]);
         }
-        return $this->redirectToRoute('app_home');
+        return $this->render('order/add.html.twig', [
+            'cart' => $cart->getCartWithData(),
+        ]);
     }
 }
