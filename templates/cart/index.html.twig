@@ -78,7 +78,7 @@
                 <b class="my-2">  Total de mon panier : {{ total }} € </b> 
                 {% if app.user %}
             
-                <a href="{{path('app_order')}}" class="btn btn-primary"> Valider votre commande </a>
+                <a href="{{path('app_order')}}" class="boutonConnexion btn"> Valider votre commande </a>
                 
                 {% else %}
                     <a href="{{path('app_login')}}" class="btn btn-dark">se connecter pour valider sa commande</a> 

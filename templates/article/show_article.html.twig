@@ -14,7 +14,7 @@
 <div class="container">
     {% for article in article %}
     <div class="row mt-5">
-        <h1 class="p-2"> {{ article.titre }} </h1>
+        <h1 class="p-2 text-center"> {{ article.titre }} </h1>
         <div class="col-md-4">
             <img src="{{ asset('uploads/photo_article/' ~ article.photo) }}" alt=" {{ article.titre }} " class="img-fluid">
         </div>

@@ -6,7 +6,7 @@
 
 <div class="container">
 
-<h1 class="text-center mt-3 mb-3"> BACKOFFICE Articles </h1>
+<h1 class="text-center mb-3"> BACKOFFICE Articles </h1>
 {% for message in app.flashes('success') %}
     <div class="alert alert-success text-center"> {{ message }} </div>
 {% endfor %}
@@ -14,7 +14,7 @@
     {% for item in articles %}
     <div class="d-fex flex-column col-md-4 border p-2">
         <div class="product-item text-center">
-            <img src="{{ asset('uploads/photo_article/' ~ item.photo) }}" style="width: 150px; border-radius: 10px;">
+            <img src="{{ asset('uploads/photo_article/' ~ item.photo) }}" style="width: 200px; height: 150px; border-radius: 10px;">
             <p class="articleTitle"> {{ item.titre }} </p>
             <a class="boutonConnexion mb-3 p-1"  href="{{ path('show_article',  {id: item.id} )  }}"> Voir Paragraphe </a> 
             {# {{ item.description}}  #}
